@@ -17,7 +17,7 @@ program
   .version('1.0.0')
   .description('Engram OS - Local First AI Operating System CLI')
   .action(async () => {
-    console.log(chalk.bold.blue('\n🧠 Welcome to Engram OS Installer\n'));
+    console.log(chalk.bold.blue('\n Welcome to Engram OS Installer\n'));
     await runInstaller();
   });
 
