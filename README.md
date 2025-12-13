@@ -30,7 +30,7 @@ This command will:
 1. Download the Engram Core.
 2. Set up the local Python environment.
 3. Launch the Brain (FastAPI) and the Dashboard (Streamlit).
-4. Automatically open your browser to http://localhost:8501.
+4. Automatically open your browser to ```http://localhost:8501```.
 
 ## System Architecture
 Engram is built as a distributed microservices architecture orchestrated via Docker Compose.
