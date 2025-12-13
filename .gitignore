@@ -15,7 +15,8 @@ history_copy.db
 celerybeat-schedule
 
 dist/
-
+ 
+cli/node_modules
 
 *.log
 *.pid
@@ -37,3 +38,5 @@ frontend/build/
 .vercel
 
 frontend/
+
+engram-core/

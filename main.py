@@ -75,7 +75,10 @@ def get_embedding(text):
         logger.error(f"Embedding failed: {e}")
         return []
 
-
+@app.get("/")
+def read_root():
+    return {"status": "Engram is Online", "version": "1.0.0"}
+    
 @app.post("/trigger-agent")
 async def trigger_agent_test():
     """Wakes up the background worker to check if it's alive."""

@@ -136,11 +136,15 @@ with col_main:
 
         
     with col_status:
-        if os.path.exists("token.json"):
-            st.markdown('<div style="text-align: right; color: #10B981; font-size: 12px; font-weight: 600; padding-top: 10px;">● ONLINE</div>', unsafe_allow_html=True)
-        else:
+        try:
+            r = requests.get(f"{API_URL}/", timeout=1)
+            if r.status_code == 200:
+                st.markdown('<div style="text-align: right; color: #10B981; font-size: 12px; font-weight: 600; padding-top: 10px;">● ONLINE</div>', unsafe_allow_html=True)
+            else:
+                st.markdown('<div style="text-align: right; color: #F59E0B; font-size: 12px; font-weight: 600; padding-top: 10px;">● API ERROR</div>', unsafe_allow_html=True)
+        except:
             st.markdown('<div style="text-align: right; color: #EF4444; font-size: 12px; font-weight: 600; padding-top: 10px;">● OFFLINE</div>', unsafe_allow_html=True)
-    
+        
     st.markdown("---")
     
 
