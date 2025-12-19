@@ -99,6 +99,26 @@ Run this command? [Y/n]
 
 - Action: Explains logic, finds bugs, or refactors code without data ever leaving your machine.
 
+**Local Git Agent**
+- An autonomous worker that manages your version control workflow directly from the CLI.
+
+- Trigger: Manual aliases (`g-commit`, `g-pr`, `g-check`).
+
+- Logic: Analyses `git diff` using Llama 3 to understand code changes.
+
+- Capabilities:
+    - Auto-Commit: Generates semantic, conventional commit messages.
+    - Writes structured Pull Request descriptions summarizing changes.
+    - Security Sentinel: Pre-flight scans for leaked secrets (AWS keys, tokens) before pushing.
+
+**Usage:**
+```bash
+$ g-commit
+Engram is reading your changes...
+Suggested Commit Message:
+feat: Add validation logic to user signup flow
+```
+
 ## Usage Guide
 **The Dashboard**
 
