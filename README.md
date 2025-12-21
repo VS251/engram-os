@@ -5,7 +5,7 @@
 [![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
 [![Docker](https://img.shields.io/badge/Docker-Compose-2496ED.svg)](https://www.docker.com/)
 [![Llama 3.1](https://img.shields.io/badge/Model-Llama_3.1-purple.svg)](https://ollama.com/)
-[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](https://opensource.org/licenses/MIT)
+[![License: MIT](https://img.shields.io/badge/License-AGPL-yellow.svg)](https://opensource.org/license/agpl-v3)
 
 **Engram OS** is a local-first, event-driven AI Operating System designed to turn your personal data into autonomous action. Unlike cloud-based assistants, Engram runs entirely on your hardware using Docker, ensuring 0% data egress.
 
