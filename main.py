@@ -15,6 +15,7 @@ from agents.spectre import router as spectre_router
 from systems.visualizer import router as visualizer_router
 from fastapi.middleware.cors import CORSMiddleware
 from agents.git_automator import router as git_router
+from systems.crawler import DocSpider, collection 
 
 from agents.tasks import test_agent_pulse 
 
@@ -81,6 +82,10 @@ class UserInput(BaseModel):
     text: str
     user_id: str = "default_user"
 
+class CrawlRequest(BaseModel):
+    url: str
+    max_pages: int = 10    
+
 
 def get_embedding(text):
     """Asks Ollama to turn text into vectors directly."""
@@ -97,6 +102,54 @@ def get_embedding(text):
 @app.get("/")
 def read_root():
     return {"status": "Engram is Online", "version": "1.0.0"}
+
+# 1. Trigger Crawl
+@app.post("/api/docs/ingest")
+async def ingest_docs(request: CrawlRequest):
+    spider = DocSpider(request.url, max_pages=request.max_pages)
+    spider.crawl() 
+    return {"status": "success", "message": f"Ingested {request.url}"}
+
+# 2. RAG Query (The 'Chat with Docs' Feature)
+class QueryRequest(BaseModel):
+    query: str
+
+@app.post("/api/docs/query")
+async def query_docs(request: QueryRequest):
+    # Retrieve top 3 most relevant chunks
+    results = collection.query(
+        query_texts=[request.query],
+        n_results=3
+    )
+    
+    # Format context for Llama 3
+    context = ""
+    sources = []
+    
+    if results['documents']:
+        for i, doc in enumerate(results['documents'][0]):
+            meta = results['metadatas'][0][i]
+            context += f"\n--- Source: {meta['source']} ({meta['type']}) ---\n{doc}\n"
+            sources.append(meta['source'])
+
+    # Ask Llama 3 with the context
+    prompt = f"""
+    Answer the user question using strictly the context below. 
+    If the code examples are in the context, prefer using them.
+    
+    CONTEXT:
+    {context}
+    
+    QUESTION: {request.query}
+    """
+    
+    from agents.git_automator import client 
+    response = client.chat(model='llama3.1:latest', messages=[{'role': 'user', 'content': prompt}])
+    
+    return {
+        "answer": response['message']['content'],
+        "sources": list(set(sources))
+    }    
 
 @app.post("/trigger-agent")
 async def trigger_agent_test():

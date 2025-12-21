@@ -5,6 +5,8 @@ credentials/*
 
 __pycache__/
 *.py[cod]
+*.pyo
+.pytest_cache/
 auth_venv/
 .DS_Store
 
@@ -13,6 +15,8 @@ auth_venv/
 agent_activity.db
 history_copy.db
 celerybeat-schedule
+engram_db/           
+chroma.sqlite3
 
 dist/
  

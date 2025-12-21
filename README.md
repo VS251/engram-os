@@ -119,6 +119,25 @@ Suggested Commit Message:
 feat: Add validation logic to user signup flow
 ```
 
+***Knowledge Base (Doc-Spider)***
+- Turns Engram into a domain expert by ingesting external documentation.
+
+- Trigger: Frontend UI (`/knowledge`) or API (`POST /api/docs/ingest`).
+
+- Logic:
+    - Crawl: A recursive spider (`systems/crawler.py`) navigates documentation sites.
+    - Parse: Intelligently separates code blocks from prose using BeautifulSoup.
+    - Vectorize: Embeds content locally using `all-MiniLM-L6-v2` and stores it in **ChromaDB**.
+    - Retrieve: Uses RAG (Retrieval-Augmented Generation) to ground Llama 3's answers in the actual docs.
+
+**Usage:**
+1. Go to the Knowledge page.
+2. Paste a URL (e.g., `https://flask.palletsprojects.com/`).
+3. Engram scrapes the site and builds a persistent local index.
+4. Ask: *"How do I write a route in Flask?"* -> Returns exact code from the docs.
+
+![](screenshots/Doc-spider.png)
+
 ## Usage Guide
 **The Dashboard**
 
