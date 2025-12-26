@@ -85,8 +85,8 @@ Type `??` after any failed command to get an instant fix suggestion from Llama 3
 $ git statsu
 git: 'statsu' is not a git command.
 $ ??
-🧞 Genie is thinking...
-✨ Suggested Fix: git status
+Genie is thinking...
+Suggested Fix: git status
 Run this command? [Y/n]
 ```
 
@@ -176,7 +176,7 @@ If you prefer to run from source without ```npx```:
 **1. Clone the Repo:**
 
 ```bash
-git clone https://github.com/VS251/engram-os.git
+git clone https://github.com/engram-os/engram-os.git
 cd engram-os
 ```
 
