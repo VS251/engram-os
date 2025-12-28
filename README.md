@@ -193,7 +193,7 @@ chmod +x start_os.sh
 ./start_os.sh
 ```
 
-## Privacy & Security
+### Privacy & Security
 - **Local Inference:** All thinking is done on your CPU/GPU via Llama 3.1. No text is ever sent to OpenAI or Anthropic.
 
 - **Local Storage:** Your Vector Database (Qdrant) lives in a Docker Volume on your machine.
