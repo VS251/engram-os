@@ -13,7 +13,7 @@ It features a dual-pipeline RAG memory system, a background nervous system for a
 
 ---
 
-## Quick Start
+### Quick Start
 
 Get up and running in one command. No complex setup required.
 
@@ -32,7 +32,7 @@ This command will:
 3. Launch the Brain (FastAPI) and the Dashboard (Streamlit).
 4. Automatically open your browser to ```http://localhost:8501```.
 
-## System Architecture
+### System Architecture
 Engram is built as a distributed microservices architecture orchestrated via Docker Compose.
 
 ![](screenshots/licensed-image.jpeg)
@@ -56,7 +56,7 @@ Engram is built as a distributed microservices architecture orchestrated via Doc
 
 - Browser Spy: A script that snapshots Chrome/Brave history for context-aware answers.
 
-## Autonomous Agents
+### Autonomous Agents
 Engram moves beyond "Chat" by employing active agents that run on a schedule.
 
 **The Calendar Agent**
@@ -155,7 +155,7 @@ JIRA_EMAIL=me@company.com
 JIRA_TOKEN=ATATT3...
 ```
 
-## Usage Guide
+### Usage Guide
 **The Dashboard**
 
 Once started, the dashboard opens at ```http://localhost:8501```.
@@ -170,7 +170,7 @@ Once started, the dashboard opens at ```http://localhost:8501```.
 
 - Thoughts: Type commands directly into the Chat interface (e.g., "Remind me to call Mom").
 
-## Manual Development Setup
+### Manual Development Setup
 If you prefer to run from source without ```npx```:
 
 **1. Clone the Repo:**
@@ -200,8 +200,8 @@ chmod +x start_os.sh
 
 - **Direct API:** Google Integrations use your own personal OAuth credentials.
 
-## Contributing
+### Contributing
 We welcome contributions! Please see [```CONTRIBUTING.md```](CONTRIBUTING.md) for details on how to set up the dev environment.
 
-## License
+### License
 This project is licensed under the AGPL-3.0 License - see the [LICENSE](LICENSE) file for details.
