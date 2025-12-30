@@ -12,7 +12,7 @@ USER_ID = "vikram"
 WHISPER_MODEL_SIZE = "base" 
 
 def record_audio(duration=5, fs=44100):
-    print("🎤 Listening... (Speak now!)")
+    print("Listening... (Speak now!)")
     recording = sd.rec(int(duration * fs), samplerate=fs, channels=1)
     sd.wait()  
     print("Processing...")

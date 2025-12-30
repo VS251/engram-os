@@ -8,7 +8,7 @@ facts = [
     "Fact: I need to buy milk and coffee beans."
 ]
 
-print("🚀 Starting Migration to 'second_brain'...")
+print("Starting Migration to 'second_brain'...")
 
 for fact in facts:
     print(f"   -> Writing: {fact}")
