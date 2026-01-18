@@ -2,13 +2,15 @@ import streamlit as st
 import requests
 from datetime import datetime
 from agents.logger import get_recent_logs
+from PIL import Image
 
-# --- CONFIGURATION ---
+icon_image = Image.open("screenshots/E-icon.png")
+
 API_URL = "http://localhost:8000"
 
 st.set_page_config(
     page_title="Engram OS",
-    page_icon="🧠",
+    page_icon=icon_image,
     layout="wide",
     initial_sidebar_state="collapsed"
 )
