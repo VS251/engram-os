@@ -58,7 +58,7 @@ def sync_history():
     new_max_time = last_sync
     
     if rows:
-        logger.info(f"🕵️ Found {len(rows)} new pages visited.")
+        logger.info(f"Found {len(rows)} new pages visited.")
     
     for url, title, visit_time in rows:
 
