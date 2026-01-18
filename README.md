@@ -1,11 +1,16 @@
-# Engram OS
+<div align="center">
 
-> **Your AI, On Your Device. Complete Privacy. Complete Control.**
+  <img src="screenshots/Engram.png" alt="Engram Logo" width="100" height="100" />
 
-[![Python](https://img.shields.io/badge/Python-3.11-blue.svg)](https://www.python.org/)
-[![Docker](https://img.shields.io/badge/Docker-Compose-2496ED.svg)](https://www.docker.com/)
-[![Llama 3.1](https://img.shields.io/badge/Model-Llama_3.1-purple.svg)](https://ollama.com/)
-[![License: AGPL](https://img.shields.io/badge/License-AGPL-yellow.svg)](https://opensource.org/license/agpl-v3)
+  # Engram OS
+  **Your AI, On Your Device. Complete Privacy. Complete Control.**
+
+  [![Python](https://img.shields.io/badge/Python-3.11-3776AB?style=flat-square&logo=python&logoColor=white)](https://www.python.org/)
+  [![Docker](https://img.shields.io/badge/Docker-Compose-2496ED?style=flat-square&logo=docker&logoColor=white)](https://www.docker.com/)
+  [![Llama 3.1](https://img.shields.io/badge/Model-Llama_3.1-424242?style=flat-square&logo=ollama&logoColor=white)](https://ollama.com/)
+  [![License](https://img.shields.io/badge/License-AGPL_3.0-F7DF1E?style=flat-square)](https://opensource.org/license/agpl-v3)
+
+</div>
 
 **Engram OS** is a local-first, event-driven AI Operating System designed to turn your personal data into autonomous action. Unlike cloud-based assistants, Engram runs entirely on your hardware using Docker, ensuring 0% data egress.
 
