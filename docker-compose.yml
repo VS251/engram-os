@@ -96,7 +96,7 @@ services:
       context: .
       dockerfile: config/Dockerfile
     container_name: engram_beat
-    command: celery -A core.worker.celery_app beat --loglevel=info
+    command: celery -A core.worker.celery_app beat --loglevel=info --schedule /app/data/celerybeat-schedule
     environment:
       - CELERY_BROKER_URL=redis://redis:6379/0
     depends_on:
