@@ -23,14 +23,14 @@ printf " ${GREEN}Online!${NC}\n"
 
 printf "%s\n" "---------------------------------------"
 printf "Starting Browser Watcher...\n"
-nohup python3 browser_sync.py > browser.log 2>&1 &
+nohup python3 sensors/browser_sync.py > data/logs/browser.log 2>&1 &
 PID_BROWSER=$!
 echo $PID_BROWSER > .browser_pid
 printf "Browser Watcher running (PID: $PID_BROWSER)\n"
 
 printf "%s\n" "---------------------------------------"
 printf "Starting File Ingestor...\n"
-nohup python3 ingestor.py > ingestor.log 2>&1 &
+nohup python3 sensors/ingestor.py > data/logs/ingestor.log 2>&1 &
 PID_INGEST=$!
 echo $PID_INGEST > .ingestor_pid
 printf "Ingestor running (PID: $PID_INGEST)\n"
@@ -38,7 +38,7 @@ printf "Ingestor running (PID: $PID_INGEST)\n"
 
 printf "%s\n" "---------------------------------------"
 printf "Starting Streamlit Dashboard...\n"
-nohup python3 -m streamlit run app.py > streamlit.log 2>&1 &
+nohup python3 -m streamlit run interface/dashboard.py > data/logs/streamlit.log 2>&1 &
 PID_UI=$!
 echo $PID_UI > .streamlit_pid
 printf "Dashboard running (PID: $PID_UI)\n"
@@ -51,5 +51,5 @@ printf "   - Dashboard:  http://localhost:8501\n"
 printf "   - Agent:      Autonomous (Runs every 15 mins)\n"
 printf "   - Ingestor:   Watching 'data/inbox' folder\n"
 printf "\n"
-printf "To shut down, run: ./stop_os.sh\n"
+printf "To shut down, run: ./scripts/stop_os.sh\n"
 printf "%s\n" "---------------------------------------"
