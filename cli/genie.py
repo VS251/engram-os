@@ -39,7 +39,7 @@ try:
     
     fixed_command = response.json()["fixed_command"]
     
-    print(f"\n✨ Suggested Fix: \033[1;32m{fixed_command}\033[0m")
+    print(f"\n Suggested Fix: \033[1;32m{fixed_command}\033[0m")
     user_input = input("Run this command? [Y/n] ")
     
     if user_input.lower() in ["", "y", "yes"]:
@@ -48,4 +48,4 @@ try:
         print("Aborted.")
 
 except Exception as e:
-    print(f"Genie is dead: {e}")
+    print(f"Genie is offline: {e}")

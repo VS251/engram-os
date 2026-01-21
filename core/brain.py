@@ -33,7 +33,6 @@ app.add_middleware(
     allow_headers=["*"],  
 )
 
-# Routers
 app.include_router(terminal_router)
 app.include_router(spectre_router)
 app.include_router(visualizer_router)
