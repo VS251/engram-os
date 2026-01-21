@@ -76,3 +76,18 @@ function g-check() {
         echo "Check your diff before pushing!"
     fi
 }
+case "$1" in
+    "commit")
+        g-commit
+        ;;
+    "pr")
+        g-pr
+        ;;
+    "check")
+        g-check
+        ;;
+    *)
+        echo "Usage: $0 {commit|pr|check}"
+        exit 1
+        ;;
+esac
