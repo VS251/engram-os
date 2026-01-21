@@ -5,7 +5,6 @@ CYAN='\033[0;36m'
 NC='\033[0m'
 
 init_local_ai() {
-  printf "%s\n" "---------------------------------------"
   printf "${GREEN}Starting Docker Infrastructure...${NC}\n"
   
   mkdir -p data/logs
@@ -13,10 +12,9 @@ init_local_ai() {
   docker-compose up -d
 
   until curl -s -f -o /dev/null "http://localhost:8000/docs"; do
-    printf "."
     sleep 2
   done
-  printf " ${GREEN}Online!${NC}\n"
+  printf "${GREEN}Online!${NC}\n"
 
   run_processes() {
     local name=$1
@@ -40,7 +38,6 @@ init_local_ai() {
   run_processes ingestor sensors/ingestor.py
   run_processes ui interface/dashboard.py
 
-  printf "%s\n" "---------------------------------------"
   printf "${CYAN}SYSTEM ONLINE${NC}\n"
   printf "   - API:        http://localhost:8000\n"
   printf "   - Dashboard:  http://localhost:8501\n"

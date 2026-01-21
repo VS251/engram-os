@@ -4,7 +4,6 @@ GREEN='\033[0;32m'
 CYAN='\033[0;36m'
 NC='\033[0m'
 
-printf "%s\n" "---------------------------------------"
 printf "${CYAN}STOPPING ENGRAM OS...${NC}\n"
 
 printf "${GREEN}Stopping Docker Infrastructure...${NC}\n"
@@ -34,5 +33,4 @@ cleanup_process "browser_sync"
 cleanup_process "ingestor"
 cleanup_process "ui"
 
-printf "%s\n" "---------------------------------------"
 printf "${CYAN}SYSTEM OFFLINE${NC}\n"

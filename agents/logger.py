@@ -8,7 +8,7 @@ root_dir = os.path.dirname(current_dir)
 DBS_DIR = os.path.join(root_dir, "data", "dbs")
 os.makedirs(DBS_DIR, exist_ok=True)
 
-DB_PATH = os.path.join(BASE_DIR, "agent_activity.db")
+DB_PATH = os.path.join(DBS_DIR, "agent_activity.db")
 
 def init_db():
     """Creates the log table if it doesn't exist."""
