@@ -150,7 +150,7 @@ Suggested Commit Message:
 feat: Add validation logic to user signup flow
 ```
 
-***Knowledge Base (Doc-Spider)***
+**Knowledge Base (Doc-Spider)**
 - Turns Engram into a domain expert by ingesting external documentation.
 
 - Trigger: Frontend UI (`/knowledge`) or API (`POST /api/docs/ingest`).
