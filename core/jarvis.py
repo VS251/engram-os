@@ -8,7 +8,7 @@ import time
 from scipy.io.wavfile import write
 
 API_URL = "http://localhost:8000/chat"
-USER_ID = "vikram"
+USER_ID = "file_watcher"
 WHISPER_MODEL_SIZE = "base" 
 
 def record_audio(duration=5, fs=44100):
