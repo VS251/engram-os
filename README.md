@@ -178,7 +178,7 @@ Add your credentials to `.env` to activate the sync:
 ```
 # Project Management Integrations
 LINEAR_KEY=lin_api_...
-JIRA_URL=[https://company.atlassian.net](https://company.atlassian.net)
+JIRA_URL=(https://yourcompany.atlassian.net)
 JIRA_EMAIL=me@company.com
 JIRA_TOKEN=ATATT3...
 ```
