@@ -161,15 +161,14 @@ feat: Add validation logic to user signup flow
     - Vectorize: Embeds content locally using `all-MiniLM-L6-v2` and stores it in **ChromaDB**.
     - Retrieve: Uses RAG (Retrieval-Augmented Generation) to ground Llama 3's answers in the actual docs.
 
-**Usage:**
-1. Go to the Knowledge page.
-2. Paste a URL (e.g., `https://flask.palletsprojects.com/`).
-3. Engram scrapes the site and builds a persistent local index.
-4. Ask: *"How do I write a route in Flask?"* -> Returns exact code from the docs.
+- Usage:
+    - Go to the Knowledge page.
+    - Paste a URL (e.g., `https://flask.palletsprojects.com/`).
+    - Engram scrapes the site and builds a persistent local index.
+    - Ask: *"How do I write a route in Flask?"* -> Returns exact code from the docs.
 
 **Daily Briefing & Sync**
 - Engram acts as your "Morning Mission Control," aggregating tasks from your project management tools into a prioritized executive summary.
-
 - Unified Inbox: Normalizes issues from **Linear** and **Jira** into a single, clutter-free stream.
 - AI Executive Summary: Llama 3 reads your open tickets and generates a natural language briefing (e.g., *"You have 3 critical bugs today, focused on the Auth API"*).
 - Live Mission Board: A dedicated dashboard widget with live status tracking and direct links to original tickets.
@@ -185,8 +184,8 @@ JIRA_TOKEN=ATATT3...
 ```
 
 ## Usage Guide
-**The Dashboard**
 
+**The Dashboard**
 Once started, the dashboard opens at ```http://localhost:8501```.
 - Chat: Interact with your long-term memory.
 
