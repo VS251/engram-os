@@ -105,9 +105,9 @@ spacer_left, center_col, spacer_right = st.columns([1, 2, 1])
 
 with center_col:
     st.markdown('<h1 class="hero-title">Engram OS</h1>', unsafe_allow_html=True)
-    st.markdown('<p class="hero-subtitle">Your Second Brain. Online.</p>', unsafe_allow_html=True)
+    st.markdown('<p class="hero-subtitle">Your Neural Interface</p>', unsafe_allow_html=True)
     
-    user_input = st.text_input("Input", placeholder="What is on your mind?", label_visibility="collapsed")
+    user_input = st.text_input("Input", placeholder="Type a command or search...", label_visibility="collapsed")
     st.markdown("###")
 
     b_spacer_l, b1, b2, b_spacer_r = st.columns([1, 2, 2, 1])
@@ -158,15 +158,13 @@ f_spacer_left, f_center_col, f_spacer_right = st.columns([1, 2, 1])
 with f_center_col:
     f_head, f_btn = st.columns([3, 1])
     with f_head:
-        st.subheader("Live Neural Activity")
+        st.subheader("System Activity")
     with f_btn:
         if st.button("Refresh Feed", key="refresh", type="secondary"):
             st.rerun()
 
     with st.container(height=400):
         logs = get_recent_logs(20)
-        if not logs:
-            st.info("System is quiet. No recent neural activity.")
         
         for timestamp, agent, action, details in logs:
             badge_class = "badge-gray"
