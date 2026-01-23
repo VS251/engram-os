@@ -32,39 +32,34 @@ st.markdown("""
     
     .stApp { background-color: #F8F9FA; } /* Lighter background */
     #MainMenu, header, footer {visibility: hidden;}
-    
-    /* Central Title and Subtitle */
-    .hero-title {
-        font-family: 'Inter', sans-serif;
-        font-weight: 800;
-        font-size: 3rem;
-        color: #212529;
+
+    .google-title {
+        font-family: 'Product Sans', 'Roboto', sans-serif;
+        font-weight: 500;
+        font-size: 4.5rem;
+        color: #202124;
         text-align: center;
-        margin-bottom: 0.5rem;
-    }
-    .hero-subtitle {
-        font-family: 'Inter', sans-serif;
-        font-weight: 400;
-        font-size: 1.2rem;
-        color: #6C757D;
-        text-align: center;
-        margin-bottom: 2rem;
+        letter-spacing: -2px;
+        margin-bottom: 20px;
+        margin-top: 40px;
     }
 
-    /* Input Field Styling */
     .stTextInput > div > div > input {
-        border: 1px solid #CED4DA;
-        border-radius: 50px; /* More rounded */
-        padding: 16px 24px;
+        border-radius: 50px;
+        padding: 12px 25px;
         font-size: 16px;
+        border: 1px solid #dfe1e5;
         box-shadow: 0 2px 4px rgba(0,0,0,0.05);
-    }
-    .stTextInput > div > div > input:focus {
-        border-color: #ADB5BD;
-        box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+        color: #202124; /* Google text color */
+        background-color: white;
     }
 
-    /* Button Styling */
+    .stTextInput > div > div > input:focus {
+        outline: none; /* Removes standard browser outline */
+        border-color: #dfe1e5;
+        box-shadow: 0 1px 6px rgba(32,33,36,.28); /* Google's focus shadow */
+    }
+
     .stButton > button {
         border-radius: 50px;
         padding: 12px 24px;
@@ -77,9 +72,8 @@ st.markdown("""
         transform: translateY(-1px);
         box-shadow: 0 4px 8px rgba(0,0,0,0.1);
     }
-    /* Specific styling for the primary 'Chat' button */
     button[kind="primary"] {
-        background-color: #E65C5C !important; /* Red color from image */
+        background-color: #619cfa !important; 
         color: white !important;
     }
     button[kind="secondary"] {
@@ -88,11 +82,9 @@ st.markdown("""
         border: 1px solid #CED4DA !important;
     }
     
-    /* Log Item Styling */
     .log-item { padding: 10px 0; border-bottom: 1px solid #E9ECEF; font-size: 13px; }
     .log-time { font-family: 'JetBrains Mono', monospace; font-size: 11px; color: #ADB5BD; margin-bottom: 2px; }
     
-    /* Badge Styling */
     .badge { padding: 2px 6px; border-radius: 4px; font-size: 10px; font-weight: 600; text-transform: uppercase; display: inline-block; margin-right: 6px; }
     .badge-green { background: #D1E7DD; color: #0F5132; }
     .badge-blue { background: #CFE2FF; color: #084298; }
@@ -104,17 +96,15 @@ st.markdown("""
 spacer_left, center_col, spacer_right = st.columns([1, 2, 1])
 
 with center_col:
-    st.markdown('<h1 class="hero-title">Engram OS</h1>', unsafe_allow_html=True)
-    st.markdown('<p class="hero-subtitle">Your Neural Interface</p>', unsafe_allow_html=True)
-    
+    st.markdown('<div class="google-title">Engram OS</div>', unsafe_allow_html=True)
     user_input = st.text_input("Input", placeholder="Type a command or search...", label_visibility="collapsed")
     st.markdown("###")
 
     b_spacer_l, b1, b2, b_spacer_r = st.columns([1, 2, 2, 1])
     with b1:
-        save_btn = st.button("📥 Save Memory", use_container_width=True, type="secondary")
+        save_btn = st.button("Save Memory", use_container_width=True, type="secondary")
     with b2:
-        chat_btn = st.button("✨ Chat with OS", type="primary", use_container_width=True)
+        chat_btn = st.button("Chat with OS", type="primary", use_container_width=True)
 
     if save_btn and user_input:
         try:
@@ -137,11 +127,11 @@ with center_col:
                     with st.expander("View Context"):
                         st.json(data['context_used'])
             except:
-                st.error("Brain is offline.")
+                st.error("Engram is offline.")
 
     st.markdown("---") 
 
-    with st.expander("🔧 System Controls"):
+    with st.expander("System Controls"):
         c_a, c_b = st.columns(2)
         with c_a:
             if st.button("Trigger Calendar Agent", use_container_width=True, type="secondary"):
