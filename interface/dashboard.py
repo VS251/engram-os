@@ -52,9 +52,9 @@ st.markdown("""
 </style>
 """, unsafe_allow_html=True)
 
-main_col, feed_col = st.columns([1.5, 1], gap="large")
+spacer_left, center_col, spacer_right = st.columns([1, 2, 1])
 
-with main_col:
+with center_col:
     c1, c2 = st.columns([5, 1])
     with c1: st.title("Engram OS")
     with c2:
@@ -65,12 +65,16 @@ with main_col:
             st.markdown('<div style="color:#DC2626; font-weight:600; text-align:right; padding-top:20px;">● OFFLINE</div>', unsafe_allow_html=True)
 
     st.markdown("###") 
+    
+
     user_input = st.text_input("Input", placeholder="What can I do for you?", label_visibility="collapsed")
     st.markdown("###") 
+
 
     b1, b2, b3 = st.columns([1, 1, 3])
     with b1: save_btn = st.button("📥 Save Memory", use_container_width=True)
     with b2: chat_btn = st.button("✨ Chat", type="primary", use_container_width=True)
+
 
     if save_btn and user_input:
         try:
@@ -89,6 +93,8 @@ with main_col:
             except: st.error("Brain is offline.")
 
     st.markdown("---")
+    
+
     with st.expander("🔧 System Controls"):
         c_a, c_b = st.columns(2)
         with c_a:
@@ -100,7 +106,11 @@ with main_col:
                 requests.post(f"{API_URL}/run-agents/email")
                 st.toast("Email Agent Started")
 
-with feed_col:
+
+f_spacer_left, f_center_col, f_spacer_right = st.columns([1, 2, 1])
+
+with f_center_col:
+    st.markdown("###") 
     f_head, f_btn = st.columns([3, 1])
     with f_head: st.subheader("Activity Feed")
     with f_btn: 
